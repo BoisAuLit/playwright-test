@@ -35,6 +35,9 @@ test.describe('Item', () => {
     // Assert completed class.
     await expect(firstTodo).toHaveClass('completed');
     await expect(secondTodo).toHaveClass('completed');
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should allow me to un-mark items as complete', async ({ page }) => {
@@ -60,6 +63,9 @@ test.describe('Item', () => {
     await expect(firstTodo).not.toHaveClass('completed');
     await expect(secondTodo).not.toHaveClass('completed');
     await checkNumberOfCompletedTodosInLocalStorage(page, 0);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should allow me to edit an item', async ({ page }) => {
@@ -79,6 +85,9 @@ test.describe('Item', () => {
       TODO_ITEMS[2]
     ]);
     await checkTodosInLocalStorage(page, 'buy some sausages');
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 

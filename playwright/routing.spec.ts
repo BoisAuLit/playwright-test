@@ -27,6 +27,9 @@ test.describe('Routing', () => {
     await page.getByRole('link', { name: 'Active' }).click();
     await expect(todoItem).toHaveCount(2);
     await expect(todoItem).toHaveText([TODO_ITEMS[0], TODO_ITEMS[2]]);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should respect the back button', async ({ page }) => {
@@ -53,6 +56,9 @@ test.describe('Routing', () => {
     await expect(todoItem).toHaveCount(2);
     await page.goBack();
     await expect(todoItem).toHaveCount(3);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should allow me to display completed items', async ({ page }) => {
@@ -60,6 +66,9 @@ test.describe('Routing', () => {
     await checkNumberOfCompletedTodosInLocalStorage(page, 1);
     await page.getByRole('link', { name: 'Completed' }).click();
     await expect(page.getByTestId('todo-item')).toHaveCount(1);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should allow me to display all items', async ({ page }) => {
@@ -69,6 +78,9 @@ test.describe('Routing', () => {
     await page.getByRole('link', { name: 'Completed' }).click();
     await page.getByRole('link', { name: 'All' }).click();
     await expect(page.getByTestId('todo-item')).toHaveCount(3);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should highlight the currently applied filter', async ({ page }) => {
@@ -85,6 +97,9 @@ test.describe('Routing', () => {
 
     // Page change - completed items.
     await expect(completedLink).toHaveClass('selected');
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 

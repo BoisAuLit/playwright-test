@@ -28,6 +28,9 @@ test.describe('Counter', () => {
     await expect(todoCount).toContainText('2');
 
     await checkNumberOfTodosInLocalStorage(page, 2);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 

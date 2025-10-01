@@ -27,6 +27,9 @@ test.describe('Mark all as completed', () => {
     // Ensure all todos have 'completed' class.
     await expect(page.getByTestId('todo-item')).toHaveClass(['completed', 'completed', 'completed']);
     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should allow me to clear the complete state of all items', async ({ page }) => {
@@ -37,6 +40,9 @@ test.describe('Mark all as completed', () => {
 
     // Should be no completed classes.
     await expect(page.getByTestId('todo-item')).toHaveClass(['', '', '']);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('complete all checkbox should update state when items are completed / cleared', async ({ page }) => {
@@ -57,6 +63,9 @@ test.describe('Mark all as completed', () => {
 
     // Assert the toggle all is checked again.
     await expect(toggleAll).toBeChecked();
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 

@@ -35,6 +35,9 @@ test.describe('New Todo', () => {
     ]);
 
     await checkNumberOfTodosInLocalStorage(page, 2);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should clear text input field when an item is added', async ({ page }) => {
@@ -48,6 +51,9 @@ test.describe('New Todo', () => {
     // Check that input is empty.
     await expect(newTodo).toBeEmpty();
     await checkNumberOfTodosInLocalStorage(page, 1);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should append new items to the bottom of the list', async ({ page }) => {
@@ -66,6 +72,9 @@ test.describe('New Todo', () => {
     // Check all items in one call.
     await expect(page.getByTestId('todo-title')).toHaveText(TODO_ITEMS);
     await checkNumberOfTodosInLocalStorage(page, 3);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 

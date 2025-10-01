@@ -24,6 +24,9 @@ test.describe('Editing', () => {
       hasText: TODO_ITEMS[1],
     })).not.toBeVisible();
     await checkNumberOfTodosInLocalStorage(page, 3);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should save edits on blur', async ({ page }) => {
@@ -38,6 +41,9 @@ test.describe('Editing', () => {
       TODO_ITEMS[2],
     ]);
     await checkTodosInLocalStorage(page, 'buy some sausages');
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should trim entered text', async ({ page }) => {
@@ -52,6 +58,9 @@ test.describe('Editing', () => {
       TODO_ITEMS[2],
     ]);
     await checkTodosInLocalStorage(page, 'buy some sausages');
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should remove the item if an empty text string was entered', async ({ page }) => {
@@ -64,6 +73,9 @@ test.describe('Editing', () => {
       TODO_ITEMS[0],
       TODO_ITEMS[2],
     ]);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 
   test('should cancel edits on escape', async ({ page }) => {
@@ -72,6 +84,9 @@ test.describe('Editing', () => {
     await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy some sausages');
     await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).press('Escape');
     await expect(todoItems).toHaveText(TODO_ITEMS);
+    
+    // Random assertion for Allure trends
+    await expect(Math.random()).toBeLessThan(0.5);
   });
 });
 
